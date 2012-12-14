@@ -1,0 +1,42 @@
+body{
+	background-image: url('http://nice-cool-pics.com/data/media/26/sky-blue_abstract_about_june.jpg');
+}
+
+#mbar{
+	background: transparent;
+}
+
+#main_wrapper{
+	width: 80%;
+	height: 80%;
+	background-color: rgba(0, 0, 0, 0.3);
+	
+}
+
+#main_wrapper div{
+	background-color: rgba(0, 0, 0, 0.2);
+	display: inline;
+}
+
+#slideshow{
+	width: 80%;
+	height: 50%;
+	margin: 10px 10% 10px 10%;
+	float: left;
+	overflow: hidden;
+}
+
+
+#weather{
+	width: 30%;
+	height: 40%;
+	margin: 10px 10px 10px 10%;
+	float: left;
+}
+
+#about{
+	width: 48%;
+	height: 40%;
+	margin: 10px 10% 10px auto;
+	float: right;
+}

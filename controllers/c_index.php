@@ -4,11 +4,26 @@ class index_controller extends base_controller {
 
 	public function __construct() {
 		parent::__construct();
+		
 	} 
+	//-------------------------------------------------------------------------------------------------
+	public function main(){
+		$this->template->content = View::instance('v_main');
+		
+		$this->template->title = "Main";
+		
+		$client_files = Array(	
+						"../css/main.css",		
+						"../javascripts/main.js",
+						"../javascripts/slideshow.js"
+						);
+						
+		$this->template->client_files = Utils::load_client_files($client_files);   
+	      	
+		echo $this->template;
+	}//end of main
 	
-	/*-------------------------------------------------------------------------------------------------
-	Access via http://yourapp.com/index/index/
-	-------------------------------------------------------------------------------------------------*/
+	
 	public function regOrlog() {
 		
 		#re-route the user if he/she has already logged in

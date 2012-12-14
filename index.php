@@ -23,7 +23,7 @@
 
 # Routing
     Router::$routes = array(
-    	'/' => '/index/regOrlog',     # default controller when "/" is requested
+    	'/' => '/index/main',     # default controller when "/" is requested
 		'/framework/' => '/docs/view/framework'
 	);	
     
