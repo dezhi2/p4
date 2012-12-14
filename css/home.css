@@ -1,0 +1,70 @@
+	#rightbox{
+			width: 40%;
+			height: 400px;
+			float: left;
+			padding: 10px;
+			margin: 10px;
+		}
+		
+		#loginform{
+			
+			height: 35%;
+			width: 40%;
+		}
+		
+		#register{
+			display: none;
+		}
+		
+		.formwrapper{
+			height: 60%;
+			width: 50%;
+			float: left;
+			margin-top: 100px;	
+		}
+		
+		.formwrapper form{
+			width: 300px;
+			margin: 0px auto;
+			
+		}
+		
+		.formwrapper form ul{	
+			list-style-type: none;
+			padding: 0;
+		}
+		
+		.formwrapper form ul li{
+			margin-top: 5px;
+			padding: 5px;
+			text-align: right;
+			color: white;
+		}
+		
+		#ajaxloader{
+			z-index: 1010;
+			background-color: black;
+			opacity: 0.7;
+			text-align: center;
+			display: none;
+		}
+		#ajaxloader p{
+			color: skyblue;
+			margin-top: 300px;
+		}
+		
+		#loginBackground_base{
+			background-image: url(../images/galaxy.jpg);
+			-moz-box-shadow: 0 0 5px 5px #888;
+			-webkit-box-shadow: 0 0 5px 5px #888;
+			box-shadow: 0 0 5px 5px #888;
+		 }
+		
+		#content{
+			background-color: rgba(0,0,0,0.8);
+		}
+		
+		#msg{
+			padding-top: 200px;
+			color: white;
+		}

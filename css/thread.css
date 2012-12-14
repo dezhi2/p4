@@ -1,0 +1,139 @@
+.gradient {
+       filter: none;
+    }
+
+h4, h5{
+	margin: 0px 0px 10px 0px;
+	font: 24px sans-serif;
+	color: white;
+	font-weight: bold;
+	background: #add9e4; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FkZDllNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2Y3ZmJmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(left,  #add9e4 0%, #f7fbfc 99%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#add9e4), color-stop(99%,#f7fbfc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #add9e4 0%,#f7fbfc 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #add9e4 0%,#f7fbfc 99%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #add9e4 0%,#f7fbfc 99%); /* IE10+ */
+	background: linear-gradient(to right,  #add9e4 0%,#f7fbfc 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#add9e4', endColorstr='#f7fbfc',GradientType=1 ); /* IE6-8 */
+}
+	
+/*blog post display*/
+#piece{
+	width: 100%;
+	list-style-type:none;
+	padding: 0;
+}
+
+#piece li{
+	border: 2px ridge;
+	padding: 10px;
+	margin: 5px;
+	overflow: auto;
+}
+/*user info side bar*/
+#userinfo{
+	width: 14%;
+	float: left;
+	min-height: 300px;
+}
+
+#userinfo div{
+	width: 90%;
+	margin: 10px auto;
+	text-align: center;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+
+a{
+	text-decoration: none;
+	color: skyblue;
+}
+
+/*user's content*/
+.userContent{
+	width: 83%;
+	float: left;
+	padding: 10px;
+	min-height: 300px;
+	border: 1px ridge;
+	
+	background-image: linear-gradient(left, #EBFFFF, white);
+	background-image: -o-linear-gradient(left, #EBFFFF, white);
+	background-image: -moz-linear-gradient(left, #EBFFFF, white);
+	background-image: -webkit-linear-gradient(left, #EBFFFF, white);
+	background-image: -ms-linear-gradient(left, #EBFFFF, white);
+	
+	position: relative;
+}
+
+.dateinfo{
+	width: 30%;
+	float: right;
+	border: 2px ridge;
+	margin: 5px 3px 1px 0px;
+	text-align: center;
+}
+
+
+/*Reply control*/	
+#reply{
+	width: 80%;
+	height: 300px;
+}
+
+/*pagination*/
+#pagination{
+	margin: 10px;
+	text-align: center;
+}
+
+#pagination a{
+	margin: 3px;
+}
+
+#pagination a:hover{
+	background: gray;
+	color: white;
+}
+
+ul li span, table{
+	font-size:x-small;
+}
+table{
+	margin-top: 30px;
+	margin-left: 15px;
+}
+
+table td{
+	width:100%;
+}
+
+table span{
+	float: left;
+	margin: 5px
+}
+ul li tr:hover{
+	background: skyblue;
+	cursor: pointer;
+}
+
+.loader{
+	width: 95%;
+	height: 90%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	position: absolute;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+.loader img{
+	margin-top: 100px;
+}
+.ui-button-text {
+    font-size: 10px; 
+}

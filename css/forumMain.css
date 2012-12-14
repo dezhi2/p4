@@ -1,0 +1,68 @@
+ul, li{
+	list-style: none;
+	margin: 10px;
+}
+
+.choices{
+	border-width: 1px;
+	border-style: ridge;
+	
+	width: 100%;
+	height: 120px;
+}
+
+#holder a{
+	text-decoration: none;
+	color: white;
+	text-shadow:-1px -1px 0 black; 
+}
+
+#holder a:hover{
+	text-shadow:-1px -1px 0 white; 
+}
+
+li a div{
+	position: relative;
+}
+
+li a div span{
+	font-size: 50px;
+	position: absolute;
+	bottom: 0;
+	padding-left: 10px;
+	
+}
+
+ul  li:nth-child(1) div{
+	background-image: url('../images/navigate.png');
+	background-size: cover;
+	background-position: center; 
+	background-repeat:no-repeat;
+}
+
+ul  li:nth-child(2) div{
+	background-image: url('../images/mems.jpg');
+	background-size: cover;
+	background-position: center; 
+	background-repeat:no-repeat;
+}
+
+ul  li:nth-child(3) div{
+	background-image: url('../images/fab.jpg');
+	background-size: cover;
+	background-position: center; 
+	background-repeat:no-repeat;
+}
+
+ul  li:nth-child(4) div{
+	background-image: url('../images/matrix.jpg');
+	background-size: cover;
+	background-position: center; 
+	background-repeat:no-repeat;
+}
+
+ul  li:nth-child(5) div{
+	background-image: url('../images/gundam2.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+}
