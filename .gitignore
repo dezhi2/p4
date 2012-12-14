@@ -165,3 +165,5 @@ pip-log.txt
 #ignore environment php
 environment.php
 
+# ignore config file
+config.php
