@@ -69,7 +69,7 @@ class forum_controller extends base_controller {
 		//user logged in show reply box
 		$this->template->content = View::instance('v_thread');
 		
-		$threadID = mysql_real_escape_string($_GET['threadID']);
+		$threadID = $_GET['threadID'];
 		
 		$q = DB::instance(DB_NAME)->select_row("SELECT `thread_id`, `name`, `total` FROM `threads` WHERE `thread_id`=".$threadID, 'assoc');
 		
