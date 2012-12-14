@@ -164,7 +164,8 @@ class forum_controller extends base_controller {
 			for($i = 0; $i < $counter; $i++){
 				$loc = "/images/forum/fm".($index - $counter + $i).".jpg";
 				$old = "#PLACEHOLDER(".($i + 1).")";
-				file_put_contents($loc, base64_decode($imgdata[$i])); //store file
+				$filename = APP_PATH.$loc;
+				file_put_contents($filename, base64_decode($imgdata[$i])); //store file
 				$textdata = str_replace($old, $loc." width=800px; height=500px;", $textdata); //re-insert data
 			}//end of for
 		}//end of if loop
