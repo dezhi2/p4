@@ -166,4 +166,4 @@ pip-log.txt
 environment.php
 
 # ignore config file
-config
+config.php
