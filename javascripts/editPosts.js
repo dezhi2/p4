@@ -40,6 +40,7 @@ $(document).ready(function(){
 				var threadID = $(this).attr('threadid');
 				var postID = $(this).attr('postid');
 				var results = splitTextImage(data);
+				
 				$.post('editPost', {
 					  threadID : threadID,
 						postID : postID,
@@ -52,7 +53,6 @@ $(document).ready(function(){
 				}).error(function(){
 					alert('uh-oh something is wrong with the server');
 				});//end of post
-				
 			}//end of else
 			
 			
@@ -116,7 +116,6 @@ $(document).ready(function(){
 		
 	});//end of click event handler 
 });//end of document ready
-
 
 function splitTextImage(data){
 	
