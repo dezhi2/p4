@@ -1,7 +1,4 @@
 $(document).ready(function(){
-
-	$('head').append('<link rel="stylesheet" href="../css/login.css" type=""type/css>');
-	
 	var s = '<form id="lnform" title="Log on">';
 	   s += '<fieldset >';
 	   s += '<label for="email" >Email*:</label>';
@@ -40,8 +37,11 @@ $(document).ready(function(){
 			}
 		});//end of dialog
 	});//end of login
-	
 });//end of document ready
+
+$(window).load(function(){
+	$('head').append('<link rel="stylesheet" href="../css/login.css" type=""type/css>');
+});
 
 function processLogin(obj, obj2){
 	var email = $(obj).find('input[name*=email]').val();
