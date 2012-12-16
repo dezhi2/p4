@@ -20,7 +20,7 @@
 	<script>
 		$(document).ready(function(){
 			
-			var timer, timeout  = 250;
+			var timer, timeout  = 1000;
 			//timer to detect if the user is done typing
 			$('#searchbar').keyup(function(){
 				clearTimeout( timer );
