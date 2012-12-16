@@ -278,7 +278,7 @@ class index_controller extends base_controller {
 		$segment =  mysql_real_escape_string($_GET['segment']);
 		$results = DB::instance(DB_NAME)->query("SELECT `thread_id`, `name` 
 										FROM `threads`
-									   WHERE LOWER(`name`) LIKE LOWER('%$segment')
+									   WHERE LOWER(`name`) LIKE LOWER('$segment%')
 									   LIMIT 0, 5 ");
 		
 		$temp = null;

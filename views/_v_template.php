@@ -24,6 +24,7 @@
 			//timer to detect if the user is done typing
 			$('#searchbar').keyup(function(){
 				clearTimeout( timer );
+				
 				timer = setTimeout(queryDB, timeout ); //set off the timer				
 			});
 			
@@ -38,15 +39,14 @@
 				if(content == ""){
 					$('#searchres').css('display','none');
 				}else{
-					$('#searchres').css('display','inline');
+					$('#searchres').html(""); //clean old content
 					$.get('/index/instantSearch', {segment:content}, function(data){
 						var obj = $.parseJSON(data);
 						var len = obj.length;
-						var s = "";	
 							for(var i = 0; i < len; i++){						
-								 s += "<tr><td id=" + obj[i].threadID + ">" + obj[i].name + "</td></tr>";
+								 $('#searchres').append("<tr><td id=" + obj[i].threadID + ">" + obj[i].name + "</td></tr>");
 							}
-						$('#searchres').html(s);
+						$('#searchres').css('display','block');
 					});//end of get
 				}//end of else
 		}//end of queryDB
