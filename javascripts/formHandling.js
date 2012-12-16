@@ -31,19 +31,20 @@ $(document).ready(function(){
 	
 	//log in form clicked submit
 	$('#logIn').click(function(){
-		
+		var email = $('#login_email').val();
+		var password = $('#login_password').val();
 		//loading icon
 		$('#ajaxloader').css("display", "block");
 		
 		//check if the fields are empty
-		if(($('#login_email').val().length && $('#login_password').val().length) == 0){
+		if((email.length && password.length) == 0){
 			$('#msg').html("Please type in your log in email address and password.");
 			$('#ajaxloader').css("display", "none");
 			return; 
 		}
 		
 		//ajax call
-		$.post('/users/login', $('#logOn').serialize(), function(data){
+		$.post('/users/login', {email:email, password:password}, function(data){
 			var returndata = $.trim(data);
 			if(returndata == 'okay'){
 				//route the user to his/her profile	

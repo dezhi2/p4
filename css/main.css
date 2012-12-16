@@ -1,42 +1,35 @@
-body{
+#mainwrapper{
+	width: 100%;
+	height: 100%;
 	background-image: url('http://nice-cool-pics.com/data/media/26/sky-blue_abstract_about_june.jpg');
-}
+	background-size: 100%;
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	}
 
 #mbar{
 	background: transparent;
+	top: 40%;
+	position: relative;
+	width: 100%;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
-#main_wrapper{
-	width: 80%;
-	height: 80%;
-	background-color: rgba(0, 0, 0, 0.3);
-	
+#menu li a{
+	color: white;
 }
 
-#main_wrapper div{
-	background-color: rgba(0, 0, 0, 0.2);
-	display: inline;
+#background{
+	display: none;
 }
 
-#slideshow{
-	width: 80%;
-	height: 50%;
-	margin: 10px 10% 10px 10%;
-	float: left;
-	overflow: hidden;
-}
-
-
-#weather{
-	width: 30%;
-	height: 40%;
-	margin: 10px 10px 10px 10%;
-	float: left;
-}
-
-#about{
-	width: 48%;
-	height: 40%;
-	margin: 10px 10% 10px auto;
-	float: right;
+#footer{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.4);
+	bottom: 0;
+	color: white;
 }

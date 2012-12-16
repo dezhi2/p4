@@ -76,10 +76,7 @@ class forum_controller extends base_controller {
 		if(empty($q)){
 			echo "You are tampering the url. Aren't you.";
 		}else{
-			
-			$client_files = Array(
-						"../css/thread.css",
-						"http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css");
+			$client_files = Array("../css/thread.css");
 						
 			$this->template->title 				= $q['name'];
 			$this->template->content->blogTitle = $q['name'];
