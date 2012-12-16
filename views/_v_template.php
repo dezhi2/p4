@@ -66,7 +66,7 @@
 			padding: 0px;
 		}
 		
-		#searchres td:hover{
+		#searchres tr:hover{
 			cursor: pointer;
 			background: skyblue;
 			color: white;

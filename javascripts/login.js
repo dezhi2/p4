@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var s = '<form id="lnform" title="Log on">';
+	var s = '<form id="lnform" title="Log on" style="display: none;">';
 	   s += '<fieldset >';
 	   s += '<label for="email" >Email*:</label>';
 	   s += '<input type="text" name="email" id="email"  maxlength="30" />';
