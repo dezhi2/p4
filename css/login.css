@@ -1,0 +1,20 @@
+.ui-button-text {
+			font-size: 10px; 
+			}
+		
+		#lnform{
+			display: none;
+		}
+		
+		#lnform a{
+			font-size: 0.7em;
+			text-decoration: none;
+			color: skyblue
+		}
+		#lnform label{
+			font-size: 12px;
+		}
+		
+		#error{
+			font-size: 10px;
+		}

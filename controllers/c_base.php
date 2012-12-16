@@ -24,15 +24,16 @@ class base_controller {
 							
 		# So we can use $user in views			
 			$this->template->set_global('user', $this->user);
-			
+			$this->template->login = "";
 		if(!$this->user){
 		#menu by default
-			$this->template->menu = "<li><a href=\"/index/regOrlog\">Sign In</a></li>";
+			$this->template->login = "<script src='../javascrpts/login.js'></script>";
+			$this->template->menu = "<li><a id='login' href='#'>Sign In</a></li>";
 		}else{
 			$this->template->menu = "<li><a href=\"/index/viewAllUsers\">Member List</li>";
 			$this->template->menu .= "<li><a href=\"/users/profile\">".$this->user->name."'s Profile</a></li>"."<li><a href=\"/users/logout\">Sign Out</a></li>";}
 		
-	}
+	}//end of constructor
 	
 	//check whether the user exists or not if not re-direct it to login or signup page
 	public function isUser(){

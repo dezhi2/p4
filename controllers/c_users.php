@@ -75,11 +75,8 @@ class users_controller extends base_controller{
 		# If attempt return false, login failed
 		if(!$attempt) {
 			echo "incorrect credentials";
-		
-		 
 		} else if($attempt == 'new' ) {
 			echo 'You need to activate your account from your registered email.';
-		
 		# Else, login succeeded!
 		}else {
 			//update db for last login
@@ -124,9 +121,7 @@ class users_controller extends base_controller{
 		
 		$client_files = Array(	
 						"../css/profile.css",
-						"../javascripts/renderProfile.js",
-						"http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css"
-	                    );
+						"../javascripts/renderProfile.js");
 	    
 	    $this->template->client_files 		= Utils::load_client_files($client_files);
 		$this->template->content->user_name = $this->user->name;

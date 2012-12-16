@@ -4,11 +4,24 @@ class index_controller extends base_controller {
 
 	public function __construct() {
 		parent::__construct();
+		
 	} 
+	//-------------------------------------------------------------------------------------------------
+	public function main(){
+		$this->template->content = View::instance('v_main');
+		
+		$this->template->title = "Main";
+		
+		$client_files = Array(	
+						"../css/main.css",		
+						"../javascripts/main.js");
+						
+		$this->template->client_files = Utils::load_client_files($client_files);   
+	      	
+		echo $this->template;
+	}//end of main
 	
-	/*-------------------------------------------------------------------------------------------------
-	Access via http://yourapp.com/index/index/
-	-------------------------------------------------------------------------------------------------*/
+	
 	public function regOrlog() {
 		
 		#re-route the user if he/she has already logged in
@@ -30,7 +43,7 @@ class index_controller extends base_controller {
 						);
 	    
 	    	$this->template->client_files = Utils::load_client_files($client_files);   
-	      		
+	      	$this->template->menu = "";	
 		# Render the view
 			echo $this->template;
 		}	
@@ -257,5 +270,25 @@ class index_controller extends base_controller {
 		}//end of while loop
 		echo json_encode($temp); // return looped data
 	}//end of getFriends
+	
+	/* ------------------------------------------------------------
+	-- INSTANT SEARCH
+	--------------------------------------------------------------*/
+	public function instantSearch(){
+		$segment =  mysql_real_escape_string($_GET['segment']);
+		$results = DB::instance(DB_NAME)->query("SELECT `thread_id`, `name` 
+										FROM `threads`
+									   WHERE LOWER(`name`) LIKE LOWER('%$segment%')
+									   LIMIT 0, 5");
+		
+		$temp = null;
+		while($tableRow = mysql_fetch_assoc($results)){
+			$temp[] = array("threadID" => $tableRow['thread_id'],
+							    "name" => $tableRow['name']);
+		}//end of while loop
+		
+		//echo json_encode($temp);
+		echo json_encode($temp);
+	}//end of instantSearch
 	
 } // end class

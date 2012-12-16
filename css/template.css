@@ -36,6 +36,7 @@
 			margin: 0;
 			float: right;
 			padding-top: 20px;
+			padding-left: 0px;
 			list-style-type:none;
 		}
 		
@@ -81,3 +82,4 @@
 		.clean{
 			both: clear;
 		}
+		

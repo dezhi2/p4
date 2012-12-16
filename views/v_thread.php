@@ -24,7 +24,7 @@
 				while($tableRow = mysql_fetch_assoc($posts)){
 					
 					$code .= "<li>";
-					$code .= "<div id=\"userinfo\"><div><a href=\"/index/viewProfile?user=".$tableRow['user_id']."\">";
+					$code .= "<div id=\"userinfo\"><div><a href=\"/index/viewProfile?userID=".$tableRow['user_id']."\">";
 					$code .= "<img width=70px height=50px src='".$tableRow['headshot']."'><br>".$tableRow['name']."</a></div>";
 					$code .= "<span>Member Since: ".date('m/d/y', $tableRow['created'])."</span><br>";
 					$code .= "<span>last login: ".date('m-d-y, g:i a', $tableRow['modified'])."</span><br>";

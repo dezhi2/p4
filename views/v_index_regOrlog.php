@@ -1,8 +1,5 @@
 <div id="main_wrapper">
 		<div id="loginBackground_base" class="logInWrapper"></div>
-		<?php
-			
-		?>
 		<div id="content" class="logInWrapper">
 			<div id="rightbox">
 				<div id="msg"></div>
