@@ -281,7 +281,7 @@ class index_controller extends base_controller {
 									   WHERE LOWER(`name`) LIKE LOWER('$segment')
 									   LIMIT 0, 5 ");
 		
-		$temp = null;
+		$temp = [];
 		while($tableRow = mysql_fetch_assoc($results)){
 			$temp[] = array("threadID" => $tableRow['thread_id'],
 							    "name" => $tableRow['name']);
