@@ -279,7 +279,7 @@ class index_controller extends base_controller {
 		$results = DB::instance(DB_NAME)->query("SELECT `thread_id`, `name` 
 										FROM `threads`
 									   WHERE LOWER(`name`) LIKE LOWER('%$segment%')
-									   LIMIT 0, 5");
+									   LIMIT 0, 5 ");
 		
 		$temp = null;
 		while($tableRow = mysql_fetch_assoc($results)){
