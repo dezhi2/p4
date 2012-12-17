@@ -16,14 +16,13 @@
 				<div id="control">
 					<ul>	
 						<li><a href="/users/changeAvatar">Change Profile Picture</a></li>
+						<li><a id= "cdpw" href="#">Change Password</a></li>
 					</ul>	
 				</div>
 
 				<div id="inbox">
 					<h4>Inbox</h4>
-						<ul>
-							
-						</ul>
+						<ul></ul>
 				</div>
 				
 			</div>
@@ -33,9 +32,7 @@
 				
 				<div id="recentActivity">
 					<h5>Recent Activity from Social Circle</h5>
-					<ul>
-					</ul>
-					
+					<ul></ul>
 					<div id="more"></div>
 				</div>
 				

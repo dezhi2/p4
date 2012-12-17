@@ -7,13 +7,22 @@ $(document).ready(function(){
 	   s += '<input type="password" name="password" id="password" maxlength="30" />';
 	   s += '<span id="error"></span>';
 	   s += '</fieldset>';
-	   s += '<a href="#">1. Crap! I forgot my password :-(</a><br>';
+	   s += '<a id="forgot" href="#">1. Crap! I forgot my password :-(</a><br>';
 	   s += '<a href="/index/regOrlog">2. Not yet a member? Register Now :-)</a>';
 	   s += '</form>';
-	   
-	$('body').append(s);
 	
-	$('#login').live('click',function(){
+	var s2 =  '<form id="getPW" title="Retrieve Password" style="display: none;">';
+		s2 += '<fieldset ><label for="email" >Email*:</label>';
+	    s2 += '<input type="text" name="email" id="email"  maxlength="30" /></fieldset>';
+		s2 += '<a id="recall" href="#" style="font-size: 0.7em; text-decoration: none; color: skyblue;">Oh! never mind :-)</a><br>';
+		s2 += '<span></span>';
+		s2 += '</form>';
+		
+	$('body').append(s);
+	$('body').append(s2);
+	
+	$('#login').live('click',function(event){
+		event.preventDefault();
 		$('#lnform').dialog({
 		  draggable: false,
 			   show:"fade",
@@ -31,12 +40,53 @@ $(document).ready(function(){
                 }
 			},
 			open: function(){
-				$(this).keypress(function(e){
-					(e.keyCode == 13) ? $(':button:contains("Log on")').click() : {};
-				});//end of key press
+				var obj = this;
+				$('#forgot').live('click',function(){$(obj).dialog( "close" );});
 			}
 		});//end of dialog
 	});//end of login
+	
+	$('#forgot').live('click', function(event){
+		event.preventDefault();
+		$('#getPW').dialog({
+		  draggable: false,
+			   show:"fade",
+			   hide:"explode",
+			  modal: true,
+		  resizable: false,
+			buttons: {
+				"Get New PW": function() {
+					var obj2 = $(this).find('span');
+					obj2.html('Processing... <img src="../images/signalloader.gif" alt="loader">');
+					var email = $(this).find('input[name*=email]').val();
+					if((email == "") || (!isValidEmailAddress(email))){
+						obj2.html('Please enter a valid email address!');
+					}else{
+						$.post('/users/resetPW', {email:email},function(data){
+							var data = $.trim(data);
+							if(data == 'okay'){
+								obj2.html('Check your email for the new password');
+							}else{
+								obj2.html(data);
+							}//end of else
+						});//end of get
+					}//end of else
+                },
+                Cancel: function() {
+                    $( this ).dialog( "close" );
+                }
+			},
+			open: function(){
+				var obj = this;	
+				$('#recall').live('click',function(){$(obj).dialog( "close" ); $('#login').click();});
+			}
+		});//end of dialog
+	});//end of forgot
+	
+	$(window).keypress(function(e){
+		if(e.keyCode == 13){ e.preventDefault(); }
+	});
+	
 });//end of document ready
 
 $(window).load(function(){

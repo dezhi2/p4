@@ -77,6 +77,44 @@ $(document).ready(function(){
 		});//end of get
 	});//end of social circle control
 	
+	//////////////////////////////
+	// change password window
+	//////////////////////////////
+	$('#cdpw').click(function(){
+		var markup = "<form id='cdpwf' title='Change Password'>";
+			markup += "<lable for='password1'>New Password</label><input type='password' name='password1' id='password1'  maxlength='30' />";
+			markup += "<lable for='password2'>Retype Password</label><input type='password' name='password2' id='password2'  maxlength='30' />";
+			markup += "<br><span id='errorcp' style='color: red; font-size: 10px;'></span></form>";
+		
+		$(markup).dialog({
+			draggable: false,
+				 show: "explode",
+				 hide: "explode",
+				modal: true,
+			resizable: false,
+			  buttons:{
+				"Change": function(){
+					var pw1 = $('input[name*=password1]').val();
+					var pw2 = $('input[name*=password2]').val();
+					var obj = this;
+					if((pw1 == "") || (pw2 == "")){ 
+						$('#errorcp').html('one of the field is blank!'); return;
+					}else if(pw1 != pw2){
+						$('#errorcp').html('passwords are mismatch!'); return;
+					}else{
+						$('#cdpwf').html('System Processing...');
+						$.post('/users/changePass',{password: pw1}, function(data){
+							$(obj).dialog("close");
+						});//end of post
+					}//end of else
+				},
+				Cancel: function(){
+					$(this).dialog("close");
+				}
+			  }//buttons
+		});//end of dialog
+		
+	});//end of change password
 });//end of document ready
 
 //trigger everytime whenever the window loads

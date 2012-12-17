@@ -102,14 +102,13 @@ class users_controller extends base_controller{
 		DB::instance(DB_NAME)->query("UPDATE `users` SET `status` = 'active' where `email` = '$email' AND `created` = '$created' ");
 		
 		header('Location: /index/regOrLog');
-		
-	}
+		}
 	
 	public function profile(){
 			# If user is blank, they're not logged in, throw them back to login!
 		if(!$this->user) {
 			
-			header('Location: /forum/viewPosts');
+			header('Location: /index.php');
 			
 			# Return will force this method to exit here - none of the rest of the code will execute
 			return false;
@@ -215,13 +214,9 @@ class users_controller extends base_controller{
 			header('Location: /index.php');	
 			# Return will force this method to exit here - none of the rest of the code will execute
 			return false;}
-		
-		$username = $this->user->name;
-		
+		$username = $this->user->name;	
 		Upload::upload($_FILES, '/images/headshots/', array('jpg', 'gif', 'png'), $username);
-		
 		$file_parts = pathinfo($_FILES['Filedata']['name']);
-
 		$pathname = '/images/headshots/'.$username.'.'.$file_parts['extension'];
 		
 		//update the database
@@ -229,9 +224,42 @@ class users_controller extends base_controller{
 		
 		//route the user back to his/her profile
 		header('Location: /users/profile');
-		
 	}//end of processAvatar
 	
+	public function changePass(){
+		$userid = $this->user->user_id;
+		$pw = mysql_real_escape_string($_POST['password']);
+		$pw = sha1(PASSWORD_SALT.$pw); 
+		
+		DB::instance(DB_NAME)->query("UPDATE `users` SET `password` = '$pw' WHERE `user_id` = $userid");
+		echo 'okay';
+	}//end of changePass
+	
+	public function resetPW(){
+		$email = mysql_real_escape_string($_POST['email']);
+		$user_id = DB::instance(DB_NAME)->select_field("SELECT `user_id` FROM `users` WHERE `email` = '".$email."'");
+		
+		if(!$user_id) {
+			echo "No such user exists in the database";
+			exit();
+		}else{
+			$new_password = Utils::generate_random_string();
+			$hashed_password = sha1(PASSWORD_SALT.$new_password); 
+			DB::instance(DB_NAME)->query("UPDATE `users` SET `password` = '$hashed_password' WHERE `user_id` = $user_id");
+			//mail the password
+			
+			$content = "You just reset your password for your angstronics account. Your new password is: \n\n";
+			$content .= $new_password."\n\n\n";
+			$content .= "Regards,\n";
+			$content .= "Derrick\n";
+			$content .= "Angstronics Webmaster\n";
+		
+			mail($email, 'Reset Password', $content, 'From: Angstronics.com ');
+		
+			echo "okay";
+		}//end of else
+		
+	}//end of resetPW
 	#################################################################
 	//The below code render the user's inbox in the main page
 	#################################################################

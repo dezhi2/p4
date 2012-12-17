@@ -9,6 +9,6 @@ $(document).ready(function(){
 															.css('background-image', 'url(' + s +')')
 															.animate({opacity:1}, 2500)});
 	
-	  },'10000'); //end of setInterval 
+	  },'8000'); //end of setInterval 
 });//end of document ready
 

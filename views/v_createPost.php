@@ -14,7 +14,7 @@
 				</ul>
 				
 				<!--Inside the tab-->
-				<div id="userPost"><textarea id="blog" name="blog"></textarea>
+				<div id="userPost"><textarea id="blog" name="blog" ></textarea>
 					<div id="optionsForUser">
 						<input id="saveBlog" type="button" value="Save Draft">
 						<input id="PostBlog" type="button" value="Post Discussion">
