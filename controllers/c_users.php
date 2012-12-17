@@ -236,7 +236,7 @@ class users_controller extends base_controller{
 	}//end of changePass
 	
 	public function resetPW(){
-		$email = mysql_real_escape_string($_POST['email']);
+		$email = $_POST['email'];
 		$user_id = DB::instance(DB_NAME)->select_field("SELECT `user_id` FROM `users` WHERE `email` = '$email'");
 		
 		if(!$user_id) {
