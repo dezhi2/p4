@@ -275,7 +275,7 @@ class index_controller extends base_controller {
 	-- INSTANT SEARCH
 	--------------------------------------------------------------*/
 	public function instantSearch(){
-		$segment = $_GET['segment']."%";
+		$segment = "%".$_GET['segment']."%";
 		$results = DB::instance(DB_NAME)->query("SELECT `thread_id`, `name` 
 										FROM `threads`
 									   WHERE LOWER(`name`) LIKE LOWER('$segment')
