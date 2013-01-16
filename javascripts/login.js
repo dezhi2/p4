@@ -1,10 +1,8 @@
 $(document).ready(function(){
 	var s = '<form id="lnform" title="Log on" style="display: none;">';
 	   s += '<fieldset >';
-	   s += '<label for="email" >Email*:</label>';
-	   s += '<input type="text" name="email" id="email"  maxlength="30" />';
-	   s += '<label for="password" >Password*:</label>';
-	   s += '<input type="password" name="password" id="password" maxlength="30" />';
+	   s += '<input type="text" name="email" id="email" placeholder="Email" maxlength="30" />';
+	   s += '<input type="password" name="password" id="password" placeholder="Password" maxlength="30" />';
 	   s += '<span id="error"></span>';
 	   s += '</fieldset>';
 	   s += '<a id="forgot" href="#">1. Crap! I forgot my password :-(</a><br>';
@@ -12,8 +10,8 @@ $(document).ready(function(){
 	   s += '</form>';
 	
 	var s2 =  '<form id="getPW" title="Retrieve Password" style="display: none;">';
-		s2 += '<fieldset ><label for="email" >Email*:</label>';
-	    s2 += '<input type="text" name="email" id="email"  maxlength="30" /></fieldset>';
+		s2 += '<fieldset >';
+	    s2 += '<input type="text" name="email" id="email" placeholder="Email" maxlength="30" /></fieldset>';
 		s2 += '<a id="recall" href="#" style="font-size: 0.7em; text-decoration: none; color: skyblue;">Oh! never mind :-)</a><br>';
 		s2 += '<span></span>';
 		s2 += '</form>';
